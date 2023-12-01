@@ -1,0 +1,55 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import stepsDefinition.Hooks;
+
+public class AjouterPage {
+	WebDriver driver = Hooks.driver;
+	By cursusIcon = By.xpath(null);
+	By editcontentIcon = By.xpath(null);
+	By editAjouterButton = By.xpath(null);
+	By textTitre = By.xpath("");
+	By textReference = By.xpath(null);
+	By textDescription = By.xpath(null);
+	By textIntructionModule = By.xpath(null);
+	By textType = By.xpath(null);
+	By textDurée = By.xpath(null);
+	By ajouetButton = By.xpath(null);
+	By checkaddmodule = By.xpath(null);
+
+	public AjouterPage(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void clickoncursusIcon() {
+		driver.findElement(cursusIcon).clear();
+	}
+
+	public void clickoneditcontentIcon() {
+		driver.findElement(editcontentIcon).click();
+	}
+
+	public void clickoneditprofil() {
+		driver.findElement(editAjouterButton).click();
+	}
+
+	public void completetheform(String Titre, String Référence, String Description, String instruction_Module,
+			String Type, String Durée) {
+		driver.findElement(textTitre).sendKeys(Titre);
+		driver.findElement(textReference).sendKeys(Référence);
+		driver.findElement(textDescription).sendKeys(Description);
+		driver.findElement(textIntructionModule).sendKeys(instruction_Module);
+		driver.findElement(textType).sendKeys(Type);
+		driver.findElement(textDurée).sendKeys(Durée);
+	}
+
+	public void clickonajouterButton() {
+		driver.findElement(ajouetButton).click();
+	}
+
+	public void checkaddModule() {
+		driver.findElement(checkaddmodule).isDisplayed();
+	}
+}

@@ -1,0 +1,21 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class AffichagePage {
+	WebDriver driver ;
+	
+	By connexionIcon = By.xpath(""); 
+	By textUsername = By.xpath("");
+	By textPassword = By.xpath("");
+	By identifyButton = By.xpath("");
+	
+
+	public AffichagePage(WebDriver driver) {
+		this.driver = driver ;
+	}
+	public void clickonconnexionIcon{
+		driver.findElement(connexionIcon).click();
+	}
+}

@@ -1,0 +1,61 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import stepsDefinition.Hooks;
+
+public class PaginationPage {
+
+	WebDriver driver = Hooks.driver;
+
+	By PaginationIcon2 = By.xpath(null);
+	By textcheckpage2 = By.xpath(null);
+	By PaginationIcon3 = By.xpath(null);
+	By textcheckpage3 = By.xpath(null);
+	By filterIcon = By.xpath(null);
+	By filternumber = By.xpath(null);
+	By textcheckfilter = By.xpath(null);
+	By leftIcon = By.xpath(null);
+	By textcheckpreviouspage = By.xpath(null);
+	By rightIcon = By.xpath(null);
+	By textchecknextpage = By.xpath(null);
+
+	public PaginationPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	public void clickonPaginationIcon2() {
+		driver.findElement(PaginationIcon2).click();
+	}
+	public void checktextpage2() {
+		driver.findElement(textcheckpage2).isDisplayed();
+	}
+	public void clickonPaginationIcon3() {
+		driver.findElement(PaginationIcon3).click();
+	}
+	public void checktextpage3() {
+		driver.findElement(textcheckpage3).isDisplayed();
+	}
+	public void clickonfilterIcon() {
+		driver.findElement(filterIcon).click();
+	}
+	public void clickonfilternumber() {
+		driver.findElement(filternumber).click();
+	}
+	public void checkfilterpage() {
+		driver.findElement(textcheckfilter).isDisplayed();
+	}
+	
+	public void clickonleftIcon() {
+		driver.findElement(leftIcon).click();
+	}
+	public void textcheckpreviouspage() {
+		driver.findElement(textcheckpreviouspage).isDisplayed();
+	}
+	public void clickonrightIcon() {
+		driver.findElement(rightIcon).click();
+	}
+	public void textchecknextpage() {
+		driver.findElement(textchecknextpage).isDisplayed();
+	}
+}

@@ -1,0 +1,29 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import stepsDefinition.Hooks;
+
+public class RecherchePage {
+	WebDriver driver = Hooks.driver;
+	By locatesearch = By.xpath("//input[@class='p-inputtext p-component p-element ng-pristine ng-valid ng-touched']");
+	By checksearch = By.xpath("//body[1]/app-root[1]/app-admin[1]/app-sessiondetails[1]/div[1]/p-tabview[1]/div[1]/div[2]/p-tabpanel[3]/div[1]/p-table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]");
+	 
+	public RecherchePage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void locatesearch() {
+		driver.findElement(locatesearch).click();
+	}
+	public void writestext() {
+		driver.findElement(locatesearch).sendKeys("Tester les APIs REST");
+	}
+	public void checksearch() {
+		driver.findElement(checksearch).isDisplayed();
+	}
+	}
+	
+
+

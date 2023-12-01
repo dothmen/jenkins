@@ -1,0 +1,10 @@
+@tag
+Feature: displaying evaluations from a past session
+
+  Scenario: verify that evaluations from a past session are displayed successfully
+    Given the administrator click on connexion icon
+    And enters mouna.makni@talan.com and Admin09$
+    And clicks on identify button
+    When the administrator is logged in clicks on the details icon
+    And clicks on Evalution icon
+    Then check that evalutions are displayed

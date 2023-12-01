@@ -1,0 +1,46 @@
+package stepsDefinition;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class AffichageSteps {
+
+@Given("the administrator click on connexion icon")
+public void the_administrator_click_on_connexion_icon() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("enters mouna.makni@talan.com Admin09$")
+public void enters_mouna_makni_talan_com_admin09$() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("clicks on identify button")
+public void clicks_on_identify_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("the administrator is logged in clicks on the details icon")
+public void the_administrator_is_logged_in_clicks_on_the_details_icon() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("clicks on Evalution icon")
+public void clicks_on_evalution_icon() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("check that evalutions are displayed")
+public void check_that_evalutions_are_displayed() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+}

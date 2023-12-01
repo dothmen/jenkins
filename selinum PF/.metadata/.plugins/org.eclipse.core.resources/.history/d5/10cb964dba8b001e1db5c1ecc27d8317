@@ -1,0 +1,27 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import stepsDefinition.Hooks;
+
+public class PaginationPage {
+	WebDriver driver = Hooks.driver;
+	
+	 By PaginationIcon2 = By.xpath(null);
+	 By textcheck2 = By .xpath(null);
+	 By paginationIcon3 = By.xpath(null);
+	 By textcheck3 = By .xpath(null);
+	 By filterIcon = By.xpath(null);
+	 By filternumber = By.xpath(null);
+	 By leftIcon = By.xpath(null);
+	 By rightIcon = By.xpath(null);
+	 
+	 public void PaginationPage (WebDriver driver) {
+		 this.driver = driver
+		 
+		 
+	 }
+	
+
+}

@@ -1,0 +1,121 @@
+package pages;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import stepsDefinition.Hooks;
+
+public class ExtractionFiltrePage {
+
+    WebDriver driver = Hooks.driver;
+
+    public ExtractionFiltrePage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public List<List<String>> extractDataFromWebTable() {
+        WebElement table = driver.findElement(By.xpath("//app-sessiondetails[1]//p-tabpanel[3]//p-table[1]//table[1]"));
+
+        List<List<String>> excelData = null;
+
+        try {
+            excelData = extractTableData(table);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return excelData;
+    }
+
+    public void filterAndWriteToExcel(List<List<String>> data) {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("TableData");
+
+            for (List<String> rowData : data) {
+                Row excelRow = sheet.createRow(sheet.getLastRowNum() + 1);
+
+                int colNum = 0;
+                for (String cellValue : rowData) {
+                    Cell cell = excelRow.createCell(colNum++);
+                    cell.setCellValue(cellValue);
+                }
+
+                // Filtrer les évaluations
+                String evaluationsValue = rowData.get(3); // Assurez-vous d'ajuster l'indice de colonne selon votre structure
+
+                switch (evaluationsValue) {
+                    case "(3 Votes)":
+                        rowData.set(3, "3");
+                        break;
+                    case "(2 Votes)":
+                        rowData.set(3, "2");
+                        break;
+                    case "(1 Votes)":
+                        rowData.set(3, "1");
+                        break;
+                }
+
+                int evaluations = Integer.parseInt(rowData.get(3)); // Assurez-vous que la colonne "votes" contient des valeurs numériques
+                if (evaluations <= 3) {
+                    // Écrire dans le fichier Excel uniquement si la condition est satisfaite
+                    try (FileOutputStream outputStream = new FileOutputStream("FilteredTableData.xlsx")) {
+                        workbook.write(outputStream);
+                    }
+                }
+            }
+
+            // Sauvegarder les données non filtrées dans un autre fichier Excel
+            try (FileOutputStream outputStream = new FileOutputStream("TableData.xlsx")) {
+                workbook.write(outputStream);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<List<String>> extractTableData(WebElement table) throws IOException {
+        List<List<String>> excelData = null;
+
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("TableData");
+
+            List<WebElement> rows = table.findElements(By.xpath("//tbody/tr"));
+
+            for (WebElement row : rows) {
+                Row excelRow = sheet.createRow(sheet.getLastRowNum() + 1);
+
+                List<WebElement> cols = row.findElements(By.xpath("./td"));
+
+                int colNum = 0;
+                for (WebElement col : cols) {
+                    Cell cell = excelRow.createCell(colNum++);
+                    cell.setCellValue(col.getText());
+                }
+
+                if (excelData == null) {
+                    excelData = new ArrayList<>();
+                }
+
+                List<String> rowData = new ArrayList<>();
+                for (int i = 0; i < colNum; i++) {
+                    rowData.add(excelRow.getCell(i).getStringCellValue());
+                }
+                excelData.add(rowData);
+            }
+        }
+
+        return excelData;
+    }
+}

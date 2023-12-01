@@ -1,0 +1,61 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import stepsDefinition.Hooks;
+
+public class PaginationPage {
+
+	WebDriver driver = Hooks.driver;
+
+	By PaginationIcon2 = By.xpath("//button[normalize-space()='2']");
+	By textcheckpage2 = By.xpath("//span[normalize-space()='11 à 20 de 49 Evaluations']");
+	By PaginationIcon3 = By.xpath("//button[normalize-space()='3']");
+	By textcheckpage3 = By.xpath("//span[normalize-space()='21 à 30 de 49 Evaluations']");
+	By filterIcon = By.xpath("//div[@aria-expanded='false']");
+	By filternumber = By.xpath("//div[@aria-expanded='false']//span[@class='p-dropdown-trigger-icon pi pi-chevron-down']");
+	By textcheckfilter = By.xpath("//span[normalize-space()='21 à 40 de 49 Evaluations']");
+	By leftIcon = By.xpath("//button[@class='p-ripple p-element p-paginator-first p-paginator-element p-link ng-star-inserted']//span[@class='p-paginator-icon pi pi-angle-double-left']");
+	By textcheckpreviouspage = By.xpath("//span[normalize-space()='21 à 40 de 49 Evaluations']");
+	By rightIcon = By.xpath("//button[@class='p-ripple p-element p-paginator-next p-paginator-element p-link']//span[@class='p-paginator-icon pi pi-angle-right']");
+	By textchecknextpage = By.xpath("//span[normalize-space()='41 à 49 de 49 Evaluations']");
+
+	public PaginationPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	public void clickonPaginationIcon2() {
+		driver.findElement(PaginationIcon2).click();
+	}
+	public void checktextpage2() {
+		driver.findElement(textcheckpage2).isDisplayed();
+	}
+	public void clickonPaginationIcon3() {
+		driver.findElement(PaginationIcon3).click();
+	}
+	public void checktextpage3() {
+		driver.findElement(textcheckpage3).isDisplayed();
+	}
+	public void clickonfilterIcon() {
+		driver.findElement(filterIcon).click();
+	}
+	public void clickonfilternumber() {
+		driver.findElement(filternumber).click();
+	}
+	public void checkfilterpage() {
+		driver.findElement(textcheckfilter).isDisplayed();
+	}
+	
+	public void clickonleftIcon() {
+		driver.findElement(leftIcon).click();
+	}
+	public void textcheckpreviouspage() {
+		driver.findElement(textcheckpreviouspage).isDisplayed();
+	}
+	public void clickonrightIcon() {
+		driver.findElement(rightIcon).click();
+	}
+	public void textchecknextpage() {
+		driver.findElement(textchecknextpage).isDisplayed();
+	}
+}

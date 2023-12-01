@@ -1,0 +1,14 @@
+package stepsDefinition;
+
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.PaginationPage;
+
+public class PaginationSteps {
+
+	WebDriver driver = Hooks.driver;
+
+	PaginationPage Pagination = new PaginationPage(driver);
+}
