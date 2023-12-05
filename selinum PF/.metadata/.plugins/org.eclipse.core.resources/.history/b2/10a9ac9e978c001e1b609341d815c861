@@ -1,9 +1,0 @@
-package pages;
-
-import org.openqa.selenium.WebDriver;
-
-import stepsDefinition.Hooks;
-
-public class AjouterPage {
-	WebDriver driver = Hooks.driver;
-}
