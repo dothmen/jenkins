@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite name="Cucumber" time="31.967" tests="7" skipped="0" failures="0" errors="0">
+<testcase classname="displaying evaluations from a past session" name="verify that evaluations from a past session are displayed successfully - Example #1.1" time="4.591">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+When clicks on the details icon.............................................passed
+And clicks on Evalution icon................................................passed
+Then check that evalutions are displayed....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="add a module" name="add module successfully - Example #1.1" time="4.625">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+When the administrator click on cursus Icon.................................passed
+And click on edit content...................................................passed
+And click on ajouter button.................................................passed
+And complete the formJavaandjavaandjava avancéand3andcodeandune semaine.....passed
+And click add button........................................................passed
+Then check that the addition is made........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="extraction and filtering of evaluations from a past session" name="extraction and filtering of evaluations from a past session" time="5.192">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+And clicks on the details icon..............................................passed
+And clicks on Evalution icon................................................passed
+When extract data evaluation of past session................................passed
+And filter the evaluations which have scores less than or equal to 3 and which have a comment.passed
+]]></system-out>
+</testcase>
+<testcase classname="pagination of past session evaluations" name="check the functionality of switching from one page to another valid" time="4.203">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+And clicks on the details icon..............................................passed
+And clicks on Evalution icon................................................passed
+When click on next icon page................................................passed
+Then verify that the next page  is displayed................................passed
+]]></system-out>
+</testcase>
+<testcase classname="pagination of past session evaluations" name="check valid paging filter functionality" time="4.211">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+And clicks on the details icon..............................................passed
+And clicks on Evalution icon................................................passed
+When click on next icon page................................................passed
+And click on filter 20......................................................passed
+Then check that the page only contains the selected number of evalutions....passed
+]]></system-out>
+</testcase>
+<testcase classname="pagination of past session evaluations" name="check functionality of arrows (right and left) to navigate between pages valid" time="4.631">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+And clicks on the details icon..............................................passed
+And clicks on Evalution icon................................................passed
+When click on next icon page................................................passed
+And click on the left icon to return to the previous page...................passed
+And check that the previous page is display.................................passed
+And click on the right icon to go to the next page..........................passed
+Then check that the next page is display....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="search for reviews from a past session" name="check search functionality" time="4.305">
+<system-out><![CDATA[
+Given the administrator click on connexion icon.............................passed
+And entersmouna.makni@talan.comandAdmin09$..................................passed
+And clicks on identify button...............................................passed
+And clicks on the details icon..............................................passed
+And clicks on Evalution icon................................................passed
+When the administtrator locate search bar...................................passed
+And writes name of lecon Tester les APIs REST...............................passed
+And check that search page displays Tester les APIs REST....................passed
+And writes name of module notions avancées..................................passed
+And check that search page displays notions avancées........................passed
+And writes the evaluation score 5 votes.....................................passed
+Then check that search page displays 5 votes................................passed
+]]></system-out>
+</testcase>
+</testsuite>
